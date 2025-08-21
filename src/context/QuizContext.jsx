@@ -1,11 +1,13 @@
 
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
 const QuizContext = createContext();
 
-
-
 const QuizProvider = ({ children }) => {
+    const [currQuest, setCurrQuest] = useState(0);
+    const [score, setScore] = useState(0);
+    const [selectdOpt, setSelectedOpt] = useState("");
+
 
     const questions = [
         {
@@ -22,7 +24,7 @@ const QuizProvider = ({ children }) => {
         }
     ]
 
-    return (<QuizContext.Provider value={{ data: questions }}>{children}</QuizContext.Provider>)
+    return (<QuizContext.Provider value={{ data: questions, currQuest, setCurrQuest, score, setScore, selectdOpt, setSelectedOpt }}>{children}</QuizContext.Provider>)
 }
 
 export { QuizProvider, QuizContext };
