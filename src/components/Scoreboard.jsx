@@ -6,7 +6,7 @@ export default function ScoreCard() {
 
     return (
         <div>
-            {score}
+            <h1>Your score is {score} !!!!  {score == 2 && <><h1>Hurray Congratulations You topped the test !</h1></>}</h1>
         </div>
     )
 }

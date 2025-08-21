@@ -4,7 +4,7 @@ import React, { createContext, useState } from "react";
 const QuizContext = createContext();
 
 const QuizProvider = ({ children }) => {
-    const [currQuest, setCurrQuest] = useState(0);
+    const [currQuest, setCurrQuest] = useState(1);
     const [score, setScore] = useState(0);
     const [selectdOpt, setSelectedOpt] = useState("");
 

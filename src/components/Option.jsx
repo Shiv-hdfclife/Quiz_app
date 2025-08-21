@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { QuizContext } from "../context/QuizContext"
 
 export default function Option({ ans, option }) {
-    let { selectdOpt, setSelectedOpt, score, setScore } = useContext(QuizContext);
+    let { selectdOpt, setSelectedOpt, score, setScore, currQuest, setCurrQuest } = useContext(QuizContext);
 
     console.log("options:", option)
     function handleClick(id) {
@@ -12,6 +12,7 @@ export default function Option({ ans, option }) {
         if (ans == selectedOption) {
             setScore(prev => prev + 1);
         }
+        setCurrQuest(prev => prev + 1);
         // console.log("After checking:", score);
         // console.log("The selected option:", selectedOption);
         // console.log("the Id:", id)
